@@ -64,30 +64,11 @@ void start_order(const char* file_name, int (*compare)(void*, void*), int sort_t
 	free_array(array);
 }
 
-int(*get_pivot())(){
-	printf("Select pivot type: \n1) Random \n2) Center \n3) Leftmost \n4)Rightmost\n");
-	int choice;
-	scanf("%d",&choice);
-	switch (choice) {
-		case 1:
-			return rand_partition;
-		case 2:
-			return centerof_partition;
-		case 3:
-			return leftmost_partition;
-		case 4:
-			return rightmost_partition;
-		default:
-			error("Invalid pivot type");
-			exit(1);
-	}
-}
-
 void array_sort(GenericArray* array, int (*compare)(void*, void*), int sort_type) {
 	switch (sort_type) {
 	case 1:
 		printf("Sorting array with quicksort\n");
-		quick_sort(array, compare,get_pivot());
+		quick_sort(array, compare);
 		break;
 	case 2:
 		printf("Sorting array with insertion sort\n");

@@ -108,3 +108,5 @@ int array_elements(GenericArray* ord_array) {
 	}
 	return ord_array->el_num;
 }
+
+

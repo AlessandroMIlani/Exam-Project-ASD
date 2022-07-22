@@ -86,7 +86,7 @@ static void test_quick_sort(void) {
 	array_add(dummy_array, &i2);
 	array_add(dummy_array, &i3);
 	array_add(dummy_array, &i1);
-	quick_sort(dummy_array, compare_int, rand_partition);
+	quick_sort(dummy_array, compare_int);
 	int** act_arr = malloc(3 * sizeof(int*));
 	for (unsigned long i = 0;i < 3;i++)
 		act_arr[i] = (int*)array_get(dummy_array, i);

@@ -38,7 +38,7 @@ static int binary_search(GenericArray*, void*, int, int, int (*compare)(void*, v
  *
  * Recursively sorts the array from the position specified by the first integer to the position specified by the second integer
  */
-void quick_sort_rec(GenericArray*, int, int, int (*compare)(void*, void*),int (*pivot)(int l,int r));
+void quick_sort_rec(GenericArray*, int, int, int (*compare)(void*, void*));
 
 /**
  * @param pointer to a generic array
@@ -49,7 +49,7 @@ void quick_sort_rec(GenericArray*, int, int, int (*compare)(void*, void*),int (*
  *
  * It's a mask function for call the quick sort from the main function
  */
-void quick_sort(GenericArray*, int(*compare)(void*, void*),int (*pivot)(int l,int r));
+void quick_sort(GenericArray*, int(*compare)(void*, void*));
 
 /**
  * @param pointer to a generic array
