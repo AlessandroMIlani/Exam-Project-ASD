@@ -50,31 +50,16 @@ public class Main {
 				return o1.getItem().compareTo(o2.getItem());
 			}
 		});
+
 		do{
 		//ask print node
 		System.out.println("Need to see the list of cities?\n1. Yes\n2. No");
 			int choice = myScan.nextInt();
-			while(choice == 1){
-			//ask firt letter of the city
-			System.out.println("Enter the first letter of the city: ");
-			String firstLetter = myScan.next();
-			for(Node<String, Float> i : arr){
-				if(i.getItem().charAt(0) == firstLetter.charAt(0)){
-					System.out.println(i.getItem());
-				}
-			}
-			System.out.println("Need to see more cities?\n1. Yes\n2. No");
-				choice = myScan.nextInt();
-		}
-
-		//ask for the start node
-		System.out.println("Enter the start node: ");
-		myScan.nextLine(); //workaround for bug in Scanner
-		String start = myScan.nextLine();
-		//ask for the end node
-		System.out.println("Enter the end node: ");
-		String end   = myScan.nextLine();
-		Dijkstra(g, start, end);
+			String[] start_end = new String[2];
+			if(choice == 1)
+				city_menu(arr);
+			start_end = city_order();
+		Dijkstra(g, start_end[0], start_end[1]);
 
 		System.out.println("Do you want to continue?\n1. Yes\n2. No");
 		int choice2 = myScan.nextInt();
@@ -148,5 +133,42 @@ public class Main {
 		}
 		System.out.println();
 
+	}
+
+	/**
+	 * Print the list of cities
+	 * 
+	 * @param arr arraylist of nodes
+	 */
+	public static void city_menu(ArrayList<Node<String,Float>> arr){
+			Scanner myScan = new Scanner(System.in); 
+			//ask firt letter of the city
+			System.out.println("Enter the first letter of the city: ");
+			String firstLetter = myScan.next();
+			for(Node<String, Float> i : arr){
+				if(i.getItem().charAt(0) == firstLetter.charAt(0)){
+					System.out.println(i.getItem());
+				}
+			}
+			System.out.println("Need to see more cities?\n1. Yes\n2. No");
+			int choice = myScan.nextInt();
+			if(choice == 1)
+				city_menu(arr);
+	}
+
+	/**
+	 * Ask the user to enter the start and end city
+	 * 
+	 * @return array of start and end city
+	 */
+	public static String[] city_order(){
+		Scanner myScan = new Scanner(System.in); 
+		//ask firt letter of the city
+		System.out.println("Enter the start city: ");
+		String start = myScan.next();
+		System.out.println("Enter the end city: ");
+		String end = myScan.next();
+		String[] start_end = {start, end};
+		return start_end;
 	}
 }
