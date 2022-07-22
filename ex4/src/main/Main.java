@@ -7,12 +7,15 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Hashtable;
 import java.util.Enumeration;
+import java.util.Scanner;
 
 import lib.*;
 import minheap.*;
 
 public class Main {
 	public static void main(String[] args) {
+		Scanner myScan = new Scanner(System.in); 
+		boolean fin = false; 
 		// check arg[1] not null
 		if (args[0] == null)
 			throw new IllegalArgumentException("arg[1] can't be null");
@@ -38,8 +41,46 @@ public class Main {
 			throw new RuntimeException(e);
 		}
 
-		// use of Dijkstra
-		Dijkstra(g, "torino", "catania");
+		ArrayList<Node<String, Float>> arr = g.getNodes();
+
+		//sort the arraylist by alphabetical order
+		arr.sort(new Comparator<Node<String, Float>>() {
+			@Override
+			public int compare(Node<String, Float> o1, Node<String, Float> o2) {
+				return o1.getItem().compareTo(o2.getItem());
+			}
+		});
+		do{
+		//ask print node
+		System.out.println("Need to see the list of cities?\n1. Yes\n2. No");
+			int choice = myScan.nextInt();
+			while(choice == 1){
+			//ask firt letter of the city
+			System.out.println("Enter the first letter of the city: ");
+			String firstLetter = myScan.next();
+			for(Node<String, Float> i : arr){
+				if(i.getItem().charAt(0) == firstLetter.charAt(0)){
+					System.out.println(i.getItem());
+				}
+			}
+			System.out.println("Need to see more cities?\n1. Yes\n2. No");
+				choice = myScan.nextInt();
+		}
+
+		//ask for the start node
+		System.out.println("Enter the start node: ");
+		myScan.nextLine(); //workaround for bug in Scanner
+		String start = myScan.nextLine();
+		//ask for the end node
+		System.out.println("Enter the end node: ");
+		String end   = myScan.nextLine();
+		Dijkstra(g, start, end);
+
+		System.out.println("Do you want to continue?\n1. Yes\n2. No");
+		int choice2 = myScan.nextInt();
+		if(choice2 == 2)
+			fin = true;
+		}while(fin == false);
 	}
 
 	/**
@@ -91,7 +132,7 @@ public class Main {
       }
     }
 		// print dist end
-		System.out.println("Shortest path to "+ end+":"+ ht.get(end).getDist());
+		System.out.println("Shortest path to "+ end+":"+ ht.get(end).getDist()/1000 +"km");
 		// print path
 		ArrayList<String> path = new ArrayList<>();
 		Cnode cnode = ht.get(end);
@@ -99,7 +140,7 @@ public class Main {
 			path.add(cnode.getArrival().getItem());
 			cnode = ht.get(cnode.getParent().getItem());
 		}
-		System.out.println("percorso completo da Torino alla destinazione: \n");
+		System.out.println("percorso completo da "+ start + " alla destinazione " + end + ": ");
 		for (int i = path.size() - 1; i >= 0; i--) {
 			System.out.print(path.get(i) + " ");
 			if (i != 0)
