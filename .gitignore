@@ -1,0 +1,8 @@
+*.o
+*.out
+*.class
+*.csv
+*/.vscode
+*/*.csv
+*.txt
+
