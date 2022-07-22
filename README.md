@@ -1,5 +1,7 @@
 ## Exam-Project-ASD
 
+### ITA
+
 Esercizi sviluppati per l'esame di Algoritmi e Strutture Dati presso UniTO.
 
 Verranno ampliati e modificati nel tempo libero 
@@ -14,7 +16,14 @@ Verranno ampliati e modificati nel tempo libero
   - ex4) Implementazione generica Grafo + dijkstra
   
   
-**Aggiunte successive**
-
-Al momento, un bel mucchio di niente
+**TODO**
+- EX1
+  - Rimuovere scelta pivot quicksort
+  - Impostare cambio da insert a quick quando ci vuole troppo tempo
+- EX4
+  - Rendere dijkstra meno hardcoded (far scegliere partenza e destinazione + poterlo rieseguire)
   
+
+### ENG
+
+WIP
