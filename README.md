@@ -1,5 +1,7 @@
 ## Exam-Project-ASD
 
+### ITA
+
 Esercizi sviluppati per l'esame di Algoritmi e Strutture Dati presso UniTO.
 
 Verranno ampliati e modificati nel tempo libero 
@@ -18,3 +20,7 @@ Verranno ampliati e modificati nel tempo libero
 
 Al momento, un bel mucchio di niente
   
+
+### ENG
+
+WIP
