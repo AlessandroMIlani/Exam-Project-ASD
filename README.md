@@ -53,5 +53,5 @@ They will be expanded and modified at leisure
 - EX4
   - [X] Making dijkstra function less hardcoded 
   - [ ] ~~Implement a basic graphical user interface~~
-    - [ ] ~~Visualize the graph ~~
+    - [ ] ~~Visualize the graph~~
   
