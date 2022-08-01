@@ -20,11 +20,13 @@ Verranno ampliati e modificati nel tempo libero
 - EX1
   - [X] Rimuovere scelta pivot quicksort
   - [X] Impostare cambio da insert a quick quando ci vuole troppo tempo
-  - [ ] Rappresentazione grafica del sort?
+  - [ ] ~~Rappresentazione grafica del sort?~~
 - EX4
   - [X] Rendere dijkstra meno hardcoded (far scegliere partenza e destinazione + poterlo rieseguire)
-  - [ ] Implementare un interfaccia grafica basica
-    - [ ] Visualizzare il grafo
+  - [ ] ~~Implementare un interfaccia grafica basica~~
+    - [ ] ~~Visualizzare il grafo~~
+
+...L'uso di java per la grafica risulta non più funzionale e particolarmente ostico (soprattuto se considerate le alternative)
   
 
 ### ENG
@@ -47,9 +49,9 @@ They will be expanded and modified at leisure
 - EX1
   - [X] Remove pivot choise quicksort
   - [X] Set swap from insert to quick when it takes too long
-  - [ ] Graphic representation of sort algorithm?
+  - [ ] ~~Graphic representation of sort algorithm?~~
 - EX4
   - [X] Making dijkstra function less hardcoded 
-  - [ ] Implement a basic graphical user interface
-    - [ ] Visualize the graph 
+  - [ ] ~~Implement a basic graphical user interface~~
+    - [ ] ~~Visualize the graph ~~
   
